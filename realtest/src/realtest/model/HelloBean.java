@@ -1,7 +1,12 @@
 package realtest.model;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -26,14 +31,18 @@ public class HelloBean {
 	}
 	
 	@RequestMapping("/pro.do")
-	public String test(Dto dto, String name, int num) {
-		System.out.println(name);
-		System.out.println(num);
+	public String test(Dto dto, String name, int num,
+			HttpServletRequest request,
+			HttpSession session,
+			HttpServletResponse response,
+			Model model) {
 		
-		System.out.println(dto.getName());
-		System.out.println(dto.getNum());
-		
+		model.addAttribute("name", name);
+		model.addAttribute("num", num);
+		model.addAttribute("dto", dto);
 		return"/WEB-INF/view/0106/pro.jsp";
 	}
+	
+
 
 }

@@ -9,13 +9,21 @@
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd"
 	>
 
+	<bean id="day" class="java.util.Date" />
+	<bean id="dto" class="realtest.model.Dto" />
+	 
+	<bean id="dto2" class="realtest.model.Dto">
+		<constructor-arg value="hello" />
+	</bean>
 
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/view/" />
-		<property name="suffix" value=".jsp" />
+	<bean id="dto3" class="realtest.model.Dto">
+		<constructor-arg value="haha" />
+		<constructor-arg value="112" />
 	</bean>
 	
-	<context:component-scan base-package="realtest.model" />
+	<bean id="memberDAO" class="ch11.logon.LogonDBBean" />
+	<bean id="memberDTO" class="ch11.logon.LogonDataBean" />
+
 	
 
 </beans>
