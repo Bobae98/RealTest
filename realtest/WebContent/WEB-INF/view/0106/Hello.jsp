@@ -2,9 +2,3 @@
     pageEncoding="UTF-8"%>
 <h3>Hello world</h3>
 <!--  ㅈ석처리 해보기  -->
-<%
-int a = 10;
-int c = 15;
- System.out.println(c+a);
-
-%>
