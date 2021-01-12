@@ -6,7 +6,7 @@
 <%@ include file="/resource/etc/color.jsp"%>
 <html>
 <head><title>로그인</title>
-<link href="/mvc/resource/style/style.css" rel="stylesheet" type="text/css">
+<link href="/realtest/resource/style/style.css" rel="stylesheet" type="text/css">
 
    <script language="javascript">
      <!--
@@ -30,7 +30,7 @@
    </script>
 </head>
 <BODY onload="begin()" bgcolor="${bodyback_c}">
-<form name="myform" action="/mvc/member/loginPro.do" method="post" onSubmit="return checkIt()">
+<form name="myform" action="/realtest/member/loginPro.do" method="post" onSubmit="return checkIt()">
 <TABLE cellSpacing=1 cellPadding=1 width="260" border=1 align="center" >
   
   <TR height="30">
@@ -48,7 +48,7 @@
     <TD colspan="2" align="middle" bgcolor="${title_c}" >
       <INPUT type=submit value="로그인"> 
       <INPUT type=reset value="다시입력">
-      <input type="button" value="회원가입" onclick="javascript:window.location='inputForm.jsp'"></TD></TR>
+      <input type="button" value="회원가입" onclick="javascript:window.location='/realtest/member/inputForm.do'"></TD></TR>
 </TABLE>
 </form>
 
