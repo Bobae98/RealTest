@@ -18,12 +18,12 @@
   </tr>
 </table>
 <form name="checkForm" method="post" action="/mvc/member/confirmId.do">
-<table width="270" border="0" cellspacing="0" cellpadding="5">
+<table width="220" border="0" cellspacing="0" cellpadding="5">
   <tr>
     <td bgcolor="${value_c}" align="center"> 
        다른 아이디를 선택하세요.<p>
        <input type="text" size="10" maxlength="12" name="id"> 
-       <input type="submit" value="ID중복확인">
+       <input type="submit" value="ID중복체크">
     </td>
   </tr>
 </table>
