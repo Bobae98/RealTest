@@ -1,7 +1,10 @@
 package realtest.model;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -32,4 +35,20 @@ public class memberbean {
 		return"member/inputPro";
 	}
 
+	@RequestMapping("loginForm.do")
+	public String loginForm() {
+		return"member/loginForm";
+	}
+	
+	@RequestMapping("loginPro.do")
+	public String loginPro(String id, String passwd,
+							HttpSession session, Model model) throws Exception{
+		int check = memberDAO.userCheck(id, passwd);
+		if(check == 1) {
+			session.setAttribute("checkId", id);
+		}
+		model.addAttribute("check", check);
+		
+		return"member/loginPro";
+	}
 }
